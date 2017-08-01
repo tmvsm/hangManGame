@@ -1,0 +1,2 @@
+select * from palavra p, dificuldade d, categoria c, palavra_categoria pc where d.DIFICULDADE_DESCRICAO = "facil" and 
+p.dificuldade_DIFICULDADE_ID = d.DIFICULDADE_ID and c.CATEGORIA_DESCRICAO="clubes" and pc.CATEGORIA_ID = c.CATEGORIA_ID and pc.PALAVRA_ID = p.PALAVRA_ID;

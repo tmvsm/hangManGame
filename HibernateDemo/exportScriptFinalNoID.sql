@@ -1,0 +1,11 @@
+drop table if exists CATEGORIA;
+drop table if exists DIFICULDADE;
+drop table if exists PALAVRA;
+drop table if exists PALAVRA_CATEGORIA;
+create table CATEGORIA (CATEGORIA_ID integer not null, CATEGORIA_DESCRICAO varchar(255), primary key (CATEGORIA_ID));
+create table DIFICULDADE (DIFICULDADE_ID integer not null, DIFICULDADE_DESCRICAO varchar(255), primary key (DIFICULDADE_ID));
+create table PALAVRA (PALAVRA_ID integer not null, PALAVRA_DESCRICAO varchar(255), dificuldade_DIFICULDADE_ID integer, primary key (PALAVRA_ID));
+create table PALAVRA_CATEGORIA (PALAVRA_ID integer not null, CATEGORIA_ID integer not null, primary key (PALAVRA_ID, CATEGORIA_ID));
+alter table PALAVRA add constraint FK18upi2akkw6v2j0uos70gv0jq foreign key (dificuldade_DIFICULDADE_ID) references DIFICULDADE (DIFICULDADE_ID);
+alter table PALAVRA_CATEGORIA add constraint FKxcm0fnyjjjon840jrqoowc7g foreign key (CATEGORIA_ID) references CATEGORIA (CATEGORIA_ID);
+alter table PALAVRA_CATEGORIA add constraint FKkxopj7w56l51673ogpea3uel3 foreign key (PALAVRA_ID) references PALAVRA (PALAVRA_ID);

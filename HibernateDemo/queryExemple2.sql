@@ -1,0 +1,1 @@
+select p.PALAVRA_ID, p.PALAVRA_DESCRICAO from palavra p, categoria c, palavra_categoria pc where c.CATEGORIA_DESCRICAO="clubes" and c.CATEGORIA_ID = pc.CATEGORIA_ID and pc.PALAVRA_ID = p.PALAVRA_ID ;
